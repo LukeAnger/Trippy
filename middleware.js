@@ -24,8 +24,10 @@ export async function middleware(req, res) {
     return response;
   }
 
-  const fetcher = await fetch(`http://localhost:3000/api/auth/${session_id}`);
-  const result = await fetcher.json();
+  //const fetcher = await fetch(`http://localhost:3000/api/auth/${session_id}`);
+  //const result = await fetcher.json();
+
+  const result = {session_id: session_id, user_id: 1}
 
   if (result.user_id) {
     authed = true;
